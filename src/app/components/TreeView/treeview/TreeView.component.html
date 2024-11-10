@@ -1,0 +1,60 @@
+<div class="card flex align-items-center justify-content-center">
+  <!-- Header Title -->
+  <p style="text-align: center; color: #3b82f6; font-weight: bold">Machinery</p>
+
+  <!-- Tree View -->
+  <p-tree
+    [value]="treeData"
+    class="w-full md:w-30rem"
+    [style]="{ width: '23rem', 'font-size': '14px', height: '100%' }"
+  >
+  </p-tree>
+
+  <!-- Buttons Positioned at Bottom with Flex and Gap -->
+  <div
+    class="button-container fixed-bottom"
+    style="
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    "
+  >
+    <!-- Search Input Positioned Above Buttons -->
+    <div
+      class="search-input-container"
+      style="width: 100%; text-align: center; margin-bottom: 10px"
+    >
+      <p-iconField iconPosition="left" class="w-full md:w-30rem">
+        <p-inputIcon styleClass="pi pi-search" />
+        <input
+          type="text"
+          pInputText
+          placeholder="Search"
+          style="width: 100%"
+        />
+      </p-iconField>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons-container" style="display: flex; gap: 10px">
+      <p-button
+        icon="pi pi-plus"
+        label="Expand all"
+        [style]="{ width: '7rem', 'font-size': '14px' }"
+        (onClick)="expandAll()"
+      />
+      <p-button
+        icon="pi pi-minus"
+        label="Collapse all"
+        [style]="{ width: '7rem', 'font-size': '14px' }"
+        (onClick)="collapseAll()"
+      />
+    </div>
+  </div>
+</div>

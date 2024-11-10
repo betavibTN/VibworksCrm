@@ -1,0 +1,30 @@
+/* Styling for Point, Dir, and Date (Gray) */
+.point-dir-date {
+  background-color: #F9FAFB; /* Gray */
+}
+
+/* Styling for the other values */
+.low-value {
+  background-color: #FC3300;
+  color: black;
+}
+
+.medium-value {
+  background-color: #FBEF0A;
+}
+
+.high-value {
+  background-color: #55B304;
+  color: black;
+}
+
+.very-high-value {
+  background-color: #FCBA36;
+  color: black;
+}
+.p-datatable td {
+
+  font-size: 3px;
+  max-width: 10px;  /* Adjust width as needed */
+  text-align: center;
+}

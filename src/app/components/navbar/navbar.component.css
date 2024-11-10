@@ -1,0 +1,46 @@
+/* Add this to your global styles.css or styles.scss */
+.custom-knob .p-knob .p-knob-range {
+  stroke: #FC3300; /* Adjust the main knob color */
+}
+
+.custom-knob .p-knob .p-knob-value {
+  stroke: #FC3300; /* Adjust the filled value color */
+}
+
+.custom-knob .p-knob .p-knob-text {
+  fill: #333; /* Adjust the text color inside the knob */
+  font-weight: bold;
+}
+
+:host ::ng-deep .card-container .card {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  user-select: none;
+  padding: 0;
+}
+
+:host ::ng-deep .card-container .card.primary-box {
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+}
+
+:host ::ng-deep .card-container .card.styled-box-green .p-ink {
+  background: rgba(75, 175, 80, 0.3); /* #4baf50 in RGB format */
+}
+
+:host ::ng-deep .card-container .card.styled-box-orange .p-ink {
+  background: rgba(255, 193, 6, 0.3); /* #ffc106 in RGB format */
+}
+
+:host ::ng-deep .card-container .card.styled-box-purple .p-ink {
+  background: rgba(156, 39, 176, 0.3); /* #9c27b0 in RGB format */
+}
+
+:host ::ng-deep .card-container .card:last-child {
+  margin-right: 0;
+}
+

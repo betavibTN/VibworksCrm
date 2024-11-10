@@ -1,0 +1,58 @@
+<p-toast></p-toast>
+<div class="split right">
+  <div class="centered">
+    <div class="center-card">
+      <div class="p-card">
+        <!-- PrimeNG Card -->
+        <p-card header="Login" styleClass="p-shadow-10">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="spacing">
+              <p-iconField iconPosition="left">
+                <input
+                  pAutoFocus
+                  required="true"
+                  [autofocus]="true"
+                  pInputText
+                  formControlName="username"
+                  placeholder="Username ..."
+                /><p-inputIcon styleClass="pi pi-user" />
+              </p-iconField>
+            </div>
+            <div class="spacing">
+              <p-iconField iconPosition="left">
+                <p-password
+                  placeholder="Password..."
+                  required="true"
+                  [feedback]="false"
+                  [toggleMask]="true"
+                  formControlName="password"
+                />
+                <p-inputIcon styleClass="pi pi-lock" />
+              </p-iconField>
+            </div>
+            <div class="spacing1 forgot-password-container">
+              <a href="#" class="forgot-password-link">Forgot your Password?</a>
+            </div>
+            <div class="spacing">
+              <p-button
+              severity="primary"
+              type="submit"
+              size="large"
+              label="Login"
+              [disabled]="loading || loginForm.invalid"
+            >
+              <ng-container *ngIf="loading; else loginText">
+                <i class="pi pi-spin pi-spinner" style="margin-right: 5px;"></i> <!-- Spinner icon when loading -->
+              </ng-container>
+              <ng-template #loginText> <!-- Template for login text -->
+                <i class="pi pi-sign-in" style="margin-right: 5px;"></i>
+              </ng-template>
+            </p-button>
+            </div>
+          </form>
+
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>

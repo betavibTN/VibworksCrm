@@ -1,0 +1,13 @@
+{
+    "dashboardSplitterLabels": [
+        {
+            "title": "TIME INDICATORS",
+            "pos": { "x": 0, "y": 50 }
+        },
+        {
+            "title": "BAND INDICATORS",
+            "pos": { "x": 20, "y": 50 }
+        }
+       
+    ]
+}

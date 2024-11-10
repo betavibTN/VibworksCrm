@@ -1,0 +1,12 @@
+.bdy {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  width: 100%;
+}
+#chart {
+  height: 71vh;
+
+  flex: 9;
+  background-color: white;
+}

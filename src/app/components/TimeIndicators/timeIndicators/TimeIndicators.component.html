@@ -1,0 +1,150 @@
+<div class="card flex flex-column align-items-center justify-content-center">
+  <!-- Header Title -->
+  <p style="text-align: center; color: #3B82F6; font-weight: bold;">Time Indicators</p>
+
+  <!-- Calendars with space between them -->
+  <div class="card flex justify-content-center gap-3" style="width: 100%;margin-top: 10px;">
+    <p-calendar
+        [(ngModel)]="date"
+        [showButtonBar]="true"
+        [style]="{'width':'100%'}"
+        appendTo="body"
+        styleClass="custom-calendar" />
+      </div>
+        <div class="card flex justify-content-center mt-3" style="width: 100%;margin-top: 10px;">
+    <p-calendar
+        [(ngModel)]="date"
+        [showButtonBar]="true"
+        [style]="{'width':'100%'}"
+        appendTo="body"
+        styleClass="custom-calendar" />
+  </div>
+
+  <!-- Dropdown -->
+  <div class="card flex justify-content-center mt-3" style="width: 100%;margin-top: 10px;">
+    <p-dropdown
+        [options]="cities"
+        [(ngModel)]="selectedCity"
+        [checkmark]="true"
+        optionLabel="name"
+        [showClear]="true"
+        [style]="{'width':'100%'}"
+        placeholder="1 Year" />
+  </div>
+  <p-inplace closable="closable"[style]="{'margin-top':'10px','margin-right':'20px'}" >
+    <ng-template pTemplate="display">
+        <span>Time Indicators</span>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="card flex justify-content-center mt-3" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 10px;margin-left:20px">
+        <div class="flex align-items-center">
+          <p-checkbox
+              [(ngModel)]="pizza"
+              label="Velocity"
+              name="pizza"
+              value="Cheese" />
+        </div>
+        <div class="flex align-items-center">
+          <p-checkbox
+              [(ngModel)]="pizza"
+              label="PEAK"
+              name="pizza"
+              value="Mushroom" />
+        </div>
+        <div class="flex align-items-center">
+          <p-checkbox
+              [(ngModel)]="pizza"
+              label="RMS"
+              name="pizza"
+              value="Pepper" />
+        </div>
+        <div class="flex align-items-center">
+          <p-checkbox
+              [(ngModel)]="pizza"
+              label="CF"
+              name="pizza"
+              value="Onion" />
+        </div>
+        <div class="flex align-items-center">
+          <p-checkbox
+              [(ngModel)]="pizza"
+              label="KU"
+              name="pizza"
+              value="Onion" />
+        </div>
+      </div>
+    </ng-template>
+</p-inplace>
+  <!-- Checkboxes arranged in pairs with spacing -->
+  <p-inplace closable="closable"[style]="{'margin-top':'10px','margin-right':'20px'}" >
+
+
+    <ng-template pTemplate="display">
+      <span>Bands</span>
+  </ng-template>
+  <ng-template pTemplate="content">
+    <div class="card flex justify-content-center mt-3" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 10px;;margin-left:20px">
+    <div class="flex align-items-center">
+      <p-checkbox
+          [(ngModel)]="pizza"
+          label="Band 1"
+          name="pizza"
+          value="Cheese" />
+    </div>
+    <div class="flex align-items-center">
+      <p-checkbox
+          [(ngModel)]="pizza"
+          label="Band 2"
+          name="pizza"
+          value="Mushroom" />
+    </div>
+    <div class="flex align-items-center">
+      <p-checkbox
+          [(ngModel)]="pizza"
+          label="Band 3"
+          name="pizza"
+          value="Pepper" />
+    </div>
+    <div class="flex align-items-center">
+      <p-checkbox
+          [(ngModel)]="pizza"
+          label="Band 4"
+          name="pizza"
+          value="Onion" />
+    </div>
+    <div class="flex align-items-center">
+      <p-checkbox
+          [(ngModel)]="pizza"
+          label="Band 5"
+          name="pizza"
+          value="Onion" />
+    </div>
+    <div class="flex align-items-center">
+      <p-checkbox
+          [(ngModel)]="pizza"
+          label="Band 6"
+          name="pizza"
+          value="Onion" />
+    </div>
+    <div class="flex align-items-center">
+      <p-checkbox
+          [(ngModel)]="pizza"
+          label="All"
+          name="pizza"
+          value="Onion" />
+    </div>
+  </div>
+  </ng-template>
+
+</p-inplace>
+  <div class="card flex justify-content-center mt-3" style="width: 100%;margin-top: 10px;">
+    <p-dropdown
+        [options]="cities"
+        [(ngModel)]="selectedCity"
+        [checkmark]="true"
+        optionLabel="name"
+        [showClear]="true"
+        [style]="{'width':'100%'}"
+        placeholder=" All Routes" />
+  </div>
+</div>

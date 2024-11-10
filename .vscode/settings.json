@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d0efde93-9efd-4727-b999-24488abb31f7/resourceGroups/BETAVIB/providers/Microsoft.Web/sites/vibworksCrm",
+    "appService.deploySubpath": "dist\\vibworks-crm\\browser"
+}

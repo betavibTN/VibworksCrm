@@ -1,0 +1,39 @@
+<div class="card flex flex-column align-items-center justify-content-center">
+  <!-- Header Title -->
+  <p  style="text-align: center; color: #3B82F6;font-weight:bold;">Annotation</p>
+  <div class="card">
+    <p-table [value]="annotation" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+
+      <!-- Table Header -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Point</th>
+          <th>Dir</th>
+          <th>Date</th>
+          <th>Velocity</th>
+          <th>Peak</th>
+          <th>RMS</th>
+          <th>KU</th>
+          <th>CF</th>
+
+        </tr>
+      </ng-template>
+
+      <!-- Table Body (Dynamically Render Data) -->
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{ product.point }}</td>
+          <td>{{ product.dir }}</td>
+          <td>{{ product.date }}</td>
+          <td>{{ product.velocity }}</td>
+          <td>{{ product.peak }}</td>
+          <td>{{ product.rms }}</td>
+          <td>{{ product.ku }}</td>
+          <td>{{ product.cf }}</td>
+
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+</div>

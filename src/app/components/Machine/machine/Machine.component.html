@@ -1,0 +1,66 @@
+<div class="card flex flex-column align-items-center justify-content-center">
+  <!-- Header Title -->
+  <p style="text-align: center; color: #3b82f6; font-weight: bold">Machine</p>
+
+  <div class="card flex justify-content-center">
+    <p-listbox
+      [options]="machineData"
+      [(ngModel)]="selectedDate"
+      optionLabel="MachineName"
+      [style]="{ width: '20rem', height: '20rem' }"
+      [listStyle]="{ 'max-height': '300px' }"
+    >
+      <ng-template let-machine pTemplate="item">
+        <!-- Use flexbox to display MachineName with dynamic background color -->
+        <div
+          class="date-time-item d-flex justify-content-between align-items-center"
+          style="width: 100%"
+        >
+          <p class="mb-0 text-smaller" style="flex: 1; color: black">
+            {{ machine.MachineName }}
+            <!-- Machine name -->
+          </p>
+        </div>
+      </ng-template>
+    </p-listbox>
+  </div>
+
+  <!-- Search Input Positioned Above Buttons -->
+  <div
+    class="button-container fixed-bottom"
+    style="
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    "
+  >
+    <div
+      class="search-input-container"
+      style="width: 100%; text-align: center; margin-bottom: 10px"
+    >
+      <p-iconField iconPosition="left">
+        <p-inputIcon styleClass="pi pi-search" />
+        <input type="text" pInputText placeholder="Search" />
+      </p-iconField>
+    </div>
+
+    <!-- City Dropdown -->
+    <div
+      class="card flex justify-content-center"
+      style="width: 100%; margin-top: 10px"
+    >
+      <p-dropdown
+        [options]="cbxDates"
+        [(ngModel)]="cbxDatesValue"
+        optionLabel="name"
+        [style]="{ width: '15rem' }"
+      ></p-dropdown>
+    </div>
+  </div>
+</div>

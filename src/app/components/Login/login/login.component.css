@@ -1,0 +1,53 @@
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0.75rem 2.75rem;
+}
+::ng-deep .p-button {
+  font-size: 16px;
+
+}
+::ng-deep input {
+  padding: 0.75rem 4.15rem;
+}
+
+::ng-deep .p-iconField {
+  position: relative;
+}
+
+::ng-deep .p-inputIcon {
+  position: absolute;
+  left: 1.5em; /* Adjust for proper alignment */
+}
+.spacing {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+.forgot-password-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px; /* Adjust spacing as needed */
+}
+.spacing1 {
+  padding: 2px 11px 2px 15px ;
+  margin-top: -4px;
+}
+.forgot-password-link {
+  font-size: 0.9em;
+  color: #5b5d5f; /* Adjust color as needed */
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.spacing1 text {
+  font-size: x-small;
+}
+.p-error {
+  font-size: 0.875rem; /* Adjust font size for error messages */
+}

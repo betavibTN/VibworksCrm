@@ -1,0 +1,11 @@
+/* Limit the width of the calendar input field */
+.custom-calendar .p-calendar {
+  width:100% !important;
+}
+
+/* Constrain the width of the calendar popup */
+.custom-calendar .p-calendar-popup {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}

@@ -1,0 +1,142 @@
+<app-navbar></app-navbar>
+
+<div class="card" style="height: 100vh; display: flex; flex-direction: column">
+  <p-splitter
+    [style]="{ height: '100%' }"
+    styleClass="mb-5"
+    layout="vertical"
+    [panelSizes]="[25, 75]"
+  >
+    <!-- Divide the full height equally -->
+
+    <!-- Left Panel (with nested p-splitter for content) -->
+    <ng-template pTemplate>
+      <div class="col flex align-items-center justify-content-center">
+        <p-splitter
+          [style]="{ height: '35%' }"
+          [panelSizes]="[10, 10, 7, 7, 36, 30]"
+          styleClass="mb-5"
+        >
+          <!-- Panel 1 with TreeViewComponent -->
+          <ng-template pTemplate>
+            <div class="col flex-column" style="position: relative">
+              <div
+                class="treeview-container"
+                style="height: 100%; overflow-y: auto"
+              >
+                <app-TreeView></app-TreeView>
+              </div>
+            </div>
+          </ng-template>
+
+          <!-- Panel 2 with MeasurementComponent -->
+          <ng-template pTemplate>
+            <div class="col flex-column" style="position: relative">
+              <app-Measurement></app-Measurement>
+            </div>
+          </ng-template>
+
+          <!-- Panel 3 with MachineComponent -->
+          <ng-template pTemplate>
+            <div class="col flex-column" style="position: relative">
+              <app-Machine></app-Machine>
+            </div>
+          </ng-template>
+
+          <!-- Panel 4 with TimeIndicators -->
+          <ng-template pTemplate>
+            <div class="col flex-column" style="position: relative">
+              <app-TimeIndicators></app-TimeIndicators>
+            </div>
+          </ng-template>
+
+          <!-- Panel 5 with DashboardBand -->
+          <ng-template pTemplate>
+            <div class="col flex-column" style="position: relative">
+              <app-DashboardBand></app-DashboardBand>
+            </div>
+          </ng-template>
+
+          <!-- Panel 6 with Annotations -->
+          <ng-template pTemplate>
+            <div class="col flex-column" style="position: relative">
+              <app-Annoation></app-Annoation>
+            </div>
+          </ng-template>
+        </p-splitter>
+      </div>
+    </ng-template>
+
+    <!-- Right Panel with Charts -->
+    <ng-template pTemplate>
+      <div
+        class="col flex align-items-center justify-content-center"
+        style="width: 100%"
+      >
+        <app-charts style="width: 100%; height: 100%"></app-charts>
+      </div>
+    </ng-template>
+  </p-splitter>
+</div>
+
+<!-- <app-navbar></app-navbar> -->
+
+<!-- <div class="card" style="height: 100%"> -->
+<!-- First Horizontal Splitter -->
+<!-- <p-splitter [style]="{ height: '20%' }" [panelSizes]="[10, 6, 7, 7, 36, 34]" styleClass="mb-5"> -->
+<!-- Panel 1 with TreeViewComponent -->
+<!-- <ng-template pTemplate>
+      <div class="col flex-column" style="height: 100%; position: relative;">
+        <div class="treeview-container" style="height: 100%; overflow-y: auto;"> -->
+<!-- <app-TreeView></app-TreeView> -->
+<!-- TreeView component -->
+<!-- </div>
+      </div>
+    </ng-template> -->
+
+<!-- Panel 2 with MeasurementComponent -->
+<!-- <ng-template pTemplate>
+      <div class="col flex-column" style="height: 100%; position: relative;">
+        <app-Measurement></app-Measurement>
+      </div>
+    </ng-template> -->
+
+<!-- Panel 3 with MachineComponent -->
+<!-- <ng-template pTemplate>
+      <div class="col flex-column" style="height: 100%; position: relative;">
+        <app-Machine></app-Machine>
+      </div>
+    </ng-template> -->
+
+<!-- Nested Panel for Time Indicators and Dashboard Band -->
+<!-- <ng-template pTemplate>
+      <div class="col flex-column" style="height: 100%; position: relative;">
+        <app-TimeIndicators></app-TimeIndicators>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate>
+      <div class="col flex-column" style="height: 100%; position: relative;">
+        <app-DashboardBand></app-DashboardBand>
+      </div>
+    </ng-template> -->
+
+<!-- Panel 5 with Annotations -->
+<!-- <ng-template pTemplate>
+      <div class="col flex-column" style="height: 100%; position: relative;">
+        <app-Annoation></app-Annoation>
+      </div>
+    </ng-template>
+  </p-splitter> -->
+
+<!-- Second Vertical Splitter for Charts -->
+<!-- <p-splitter [style]="{ height: '1000px' }"    layout="vertical">
+    <ng-template pTemplate>
+
+        <div class="flex flex-column" style="height: 100%; ">
+          <app-charts></app-charts>
+        </div>
+
+    </ng-template>
+  </p-splitter>
+</div> -->

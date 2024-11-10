@@ -1,0 +1,110 @@
+<div class="card">
+  <p-menubar [model]="items">
+    <ng-template pTemplate="item" let-item let-root="root">
+      <a pRipple class="flex align-items-center p-menuitem-link">
+        <span [class]="item.icon"></span>
+        <span class="ml-2">{{ item.label }}</span>
+        <p-badge
+          *ngIf="item.badge"
+          [ngClass]="{ 'ml-auto': !root, 'ml-2': root }"
+          [value]="item.badge"
+        />
+        <i
+          *ngIf="item.items"
+          [ngClass]="[
+            'pi',
+            root ? 'pi-angle-down ml-2' : 'pi-angle-right ml-auto'
+          ]"
+        ></i>
+      </a>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div class="flex align-items-center gap-2">
+        <input
+          type="text"
+          pInputText
+          placeholder="Search"
+          class="w-8rem sm:w-auto"
+        />
+        <p-avatar
+          image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+          shape="circle"
+        />
+      </div>
+      <!-- <button (click)="toggleTheme()">Switch Theme</button> -->
+    </ng-template>
+  </p-menubar>
+</div>
+
+<!-- Settings Dialog -->
+<p-dialog
+  header="Settings"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '50vw' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+  <p>This is the Settings modal. You can add any content here.</p>
+  <p-footer>
+    <button
+      pButton
+      label="Close"
+      icon="pi pi-times"
+      (click)="visible = false"
+    ></button>
+  </p-footer>
+</p-dialog>
+
+<!-- Open Database Dialog -->
+<p-dialog
+  header="Open Database"
+  [modal]="true"
+  [(visible)]="databaseDialogVisible"
+  [style]="{ width: '50vw' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+  <div
+    style="
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 10px;
+      margin-left: 20px;
+    "
+  >
+    <div
+      class="card flex justify-content-center"
+      style="width: 100%; margin-top: 10px"
+    >
+      <p-iconField iconPosition="left">
+        <p-inputIcon styleClass="pi pi-search" />
+        <input type="text" pInputText placeholder="Search" />
+      </p-iconField>
+    </div>
+
+    <div
+      class="card card-container flex justify-content-center align-items-center"
+    >
+      <div pRipple class="card styled-box-green shadow-2">BETAVIB DEMO-V5</div>
+      <div pRipple class="card styled-box-orange shadow-2">Alpha</div>
+      <div pRipple class="card styled-box-purple shadow-2">
+        BETAVIB DEMO-V500
+      </div>
+    </div>
+    <p-knob [(ngModel)]="value" [size]="200" class="custom-knob"></p-knob>
+
+    <p-knob [(ngModel)]="value" [size]="200" rangeColor="MediumTurquoise" />
+    <p-knob [(ngModel)]="value" [size]="200" />
+    <p-knob [(ngModel)]="value" [size]="200" />
+  </div>
+  <p-footer>
+    <button
+      pButton
+      label="Close"
+      icon="pi pi-times"
+      (click)="databaseDialogVisible = false"
+    ></button>
+  </p-footer>
+</p-dialog>

@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+
+
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+/* @import "primeng/resources/themes/lara-dark-blue/theme.css"; */
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.p-card .p-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #327DBE;
+  margin-bottom: 0.5rem;
+}
+
+::ng-deep .p-button.p-button-primary {
+  background-color: #327DBE !important; /* Custom background color */
+  border-color: #327DBE !important; /* Custom border color */
+  color: #fff !important; /* Text color */
+}

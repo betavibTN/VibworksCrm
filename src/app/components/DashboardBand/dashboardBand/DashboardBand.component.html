@@ -1,0 +1,154 @@
+<div class="card flex flex-column align-items-center justify-content-center">
+  <!-- Header Title -->
+
+  <p
+    style="text-align: center; color: #3b82f6; font-weight: bold"
+    (click)="showDialog()"
+  >
+    Dashboard
+  </p>
+  <div class="card">
+    <p-table
+      [value]="products"
+      styleClass="p-datatable-gridlines"
+      [tableStyle]="{ 'min-width': '50rem', }"
+    >
+      <!-- Table Header -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Point</th>
+          <th>Dir</th>
+          <th>Date</th>
+          <th>Velocity</th>
+          <th>Peak</th>
+          <th>RMS</th>
+          <th>KU</th>
+          <th>CF</th>
+          <th>Unbalance</th>
+          <th>Alignment</th>
+          <th>Bearings</th>
+          <th>Bearing Harmonics</th>
+          <th>High Fqs1</th>
+          <th>High Fq2</th>
+        </tr>
+      </ng-template>
+
+      <!-- Table Body -->
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td [ngClass]="'point-dir-date'">{{ product.point }}</td>
+          <td [ngClass]="'point-dir-date'">{{ product.dir }}</td>
+          <td [ngClass]="'point-dir-date'">{{ product.date }}</td>
+          <td [ngClass]="getColorClass(product.velocity)">
+            {{ product.velocity }}
+          </td>
+          <td [ngClass]="getColorClass(product.peak)">{{ product.peak }}</td>
+          <td [ngClass]="getColorClass(product.rms)">{{ product.rms }}</td>
+          <td [ngClass]="getColorClass(product.ku)">{{ product.ku }}</td>
+          <td [ngClass]="getColorClass(product.cf)">{{ product.cf }}</td>
+          <td [ngClass]="getColorClass(product.unbalance)">
+            {{ product.unbalance }}
+          </td>
+          <td [ngClass]="getColorClass(product.alignment)">
+            {{ product.alignment }}
+          </td>
+          <td [ngClass]="getColorClass(product.bearings)">
+            {{ product.bearings }}
+          </td>
+          <td [ngClass]="getColorClass(product.bearingHarmonics)">
+            {{ product.bearingHarmonics }}
+          </td>
+          <td [ngClass]="getColorClass(product.highFqs1)">
+            {{ product.highFqs1 }}
+          </td>
+          <td [ngClass]="getColorClass(product.highFq2)">
+            {{ product.highFq2 }}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <!-- Dialog Section -->
+    <p-dialog
+      header="Dashboard Details"
+      [resizable]="false"
+      [modal]="true"
+      [maximizable]="true"
+      appendTo="body"
+      [(visible)]="dialogVisible"
+      [style]="{ width: '75vw' }"
+      [contentStyle]="{ height: '300px' }"
+    >
+      <p-table
+        [value]="products"
+        [scrollable]="true"
+        scrollHeight="flex"
+        [tableStyle]="{ 'min-width': '50rem' }"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Point</th>
+            <th>Dir</th>
+            <th>Date</th>
+            <th>Velocity</th>
+            <th>Peak</th>
+            <th>RMS</th>
+            <th>KU</th>
+            <th>CF</th>
+            <th>Unbalance</th>
+            <th>Alignment</th>
+            <th>Bearings</th>
+            <th>Bearing Harmonics</th>
+            <th>High Fqs1</th>
+            <th>High Fq2</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td [ngClass]="'point-dir-date'">{{ product.point }}</td>
+            <td [ngClass]="'point-dir-date'">{{ product.dir }}</td>
+            <td [ngClass]="'point-dir-date'">{{ product.date }}</td>
+            <td [ngClass]="getColorClass(product.velocity)">
+              {{ product.velocity }}
+            </td>
+            <td [ngClass]="getColorClass(product.peak)">{{ product.peak }}</td>
+            <td [ngClass]="getColorClass(product.rms)">{{ product.rms }}</td>
+            <td [ngClass]="getColorClass(product.ku)">{{ product.ku }}</td>
+            <td [ngClass]="getColorClass(product.cf)">{{ product.cf }}</td>
+            <td [ngClass]="getColorClass(product.unbalance)">
+              {{ product.unbalance }}
+            </td>
+            <td [ngClass]="getColorClass(product.alignment)">
+              {{ product.alignment }}
+            </td>
+            <td [ngClass]="getColorClass(product.bearings)">
+              {{ product.bearings }}
+            </td>
+            <td [ngClass]="getColorClass(product.bearingHarmonics)">
+              {{ product.bearingHarmonics }}
+            </td>
+            <td [ngClass]="getColorClass(product.highFqs1)">
+              {{ product.highFqs1 }}
+            </td>
+            <td [ngClass]="getColorClass(product.highFq2)">
+              {{ product.highFq2 }}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+      <ng-template pTemplate="footer">
+        <button
+          type="button"
+          pButton
+          pRipple
+          icon="pi pi-times"
+          (click)="dialogVisible = false"
+          label="Dismiss"
+          class="p-button-text"
+        ></button>
+      </ng-template>
+    </p-dialog>
+  </div>
+</div>

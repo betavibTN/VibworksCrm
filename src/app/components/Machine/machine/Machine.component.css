@@ -1,0 +1,14 @@
+.same-width {
+  width: 15rem;
+}
+.date-time-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.date-time-item p,
+.date-time-item span {
+  margin: 0;
+}
